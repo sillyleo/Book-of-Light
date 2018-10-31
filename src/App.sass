@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700|Noto+Serif+JP:400,500,700,700')
+@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic:700|Raleway:700');
+
+
+$blue: rgba(4, 153, 255, 1.000)
+$red: rgba(249, 87, 89, 1.000)
+$break-width: 720px
+$verse-size: 19.48px
+$zoom-size: 1.15
+$line-color: rgba(0,0,0,0.075)
+$gold: #BFB391
+
+/*************
+ * UTILITIES *
+ *************/
+
+.disabled
+  opacity: 0.5
+  filter: saturate(0)
+
+/*********
+ * BASIC *
+ *********/
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+a
+  text-decoration: none
+  color: initial
+  transition: 0.2s all
+  &:hover
+    color: $blue
+
+body
+  // font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif
+  font-family: 'Noto Sans JP', sans-serif
+  // font-family: 'Noto Serif JP', sans-serif
+  background: darken(#fafafa, 2%)
+  color: rgba(0, 0, 0, 0.87)
+  font-synthesis: none
+  font-weight: 500
+  -moz-font-feature-settings: 'kern'
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+/**********
+ * LAYOUT *
+ **********/
+
+
+.theme-wrapper
+  width: 100%
+  min-height: 100vh
+
+.LoaderStyle
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+
+.logout-block
+  display: block
+  margin: 0 auto
+  padding: 60px
+  text-align: center
+  max-width: $break-width
+  button
+    opacity: 0
+    &:hover
+      opacity: 1
+
+.AppBase
+  max-width: $break-width
+  margin: 0 auto
+
+.switch-mode-button
+  top: 8px
+  right: 8px
+  z-index: 2
+  position: fixed
+  transition: 0.3s all
+  height: 44px
+  text-align: right
+  color: $blue
+  background: tranparent
+  border-radius: 100%
+  &:hover, &:active
+    background: rgba(255,255,255,0.4)
+
+.back-button
+  position: fixed
+  transition: 0.3s all
+  padding: 2px
+  width: 44px
+  height: 44px
+  top: 8px
+  left: 8px
+  z-index: 2
+  border-radius: 100%
+  border: none
+  background: tranparent
+  display: flex
+  align-content: center
+  justify-content: center
+  &:hover, &:active
+    background: rgba(255,255,255,0.4)
+    // box-shadow: 0 0 30px rgba(32, 184, 232, 0.9)
+
+
+/***************
+ * HOME SCREEN *
+ ***************/
+
+// .continue-button
+//   display: block
+//   position: fixed
+//   right: 20px
+//   bottom: 20px
+
+.avatar
+  width: 60px
+  height: 60px
+  border-radius: 60px
+  margin: 10px 16px 10px 10px
+
+.col
+  display: flex
+  align-items: center
+
+.homelist
+  li.mt
+    margin-top: 48*2px
+
+.homelist
+  li
+    &:active
+      background: rgba(0,0,0,0.01)
+    .icon
+      width: 44px
+      height: 44px
+      margin-top: 5px
+      margin-bottom: 5px
+      margin-right: -15px
+    &.seperator
+      &:hover
+        box-shadow: none
+      height: 24px
+      min-height: 24px
+      display: flex
+      box-shadow: none
+      background: none
+    &.extra-margin
+      margin-bottom: 24px
+    a
+      display: flex
+      flex-grow: 1
+      align-items: center
+      span
+        padding-left: 20px
+    display: flex
+    justify-content: flex-start
+    align-items: stretch
+    min-height: 54px
+    background: rgba(255,255,255,0.75)
+    border-radius: 12px
+    margin: 0 14px 5px 14px
+    transition: 0.3s all
+    position: relative
+    top: 0
+    &:active
+      position: relative
+      top: 2px
+  @media screen and (min-width: $break-width)
+    li:hover
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15)
+
+
+#page-title
+  padding: 80px 16px 24px 16px
+  opacity: 1
+  color: $gold
+
+/**************
+ * TYPOGRAPHY *
+ *************
+
+h1
+  font-style: normal
+  font-weight: bold
+  line-height: normal
+  font-size: 97.5361px
+  letter-spacing: -1.5px
+
+
+h2
+  font-style: normal
+  font-weight: 700
+  line-height: normal
+  font-size: 60.96px
+  letter-spacing: -0.5px
+  
+
+h3
+  font-style: normal
+  font-weight: 700
+  line-height: normal
+  font-size: 48.768px
+
+h4
+  font-style: normal
+  font-weight: 700
+  line-height: normal
+  font-size: 34.544px
+  letter-spacing: 0.25px
+
+h5
+  font-style: normal
+  font-weight: 700
+  line-height: normal
+  font-size: 24.384px
+
+h6
+  font-style: normal
+  font-weight: 500
+  line-height: normal
+  font-size: 20.32px
+  letter-spacing: 0.25px
+
+.body1, body
+  line-height: 28px
+  font-size: 16.256px
+  letter-spacing: 0.5px
+
+.body2
+  line-height: 20px
+  font-size: 14.224px
+  letter-spacing: 0.25px
+
+.verse-body
+  line-height: 1.68
+  font-size: $verse-size
+  letter-spacing: 0.25px
+  font-weight: 500
+  color: #3a474a
+  @media screen and (min-width: $break-width)
+    font-size: $verse-size * $zoom-size
+
+
+.subtitle1
+  font-style: normal
+  font-weight: 700
+  line-height: 24px
+  font-size: 16.256px * 1.05
+  text-transform: uppercase
+  letter-spacing: 0.15px
+
+
+.subtitle2
+  font-style: normal
+  font-weight: 700
+  line-height: 24px
+  font-size: 14.224px
+  letter-spacing: 0.1px
+  color: #757575
+
+
+.button, button
+  background: transparent
+  border: none
+  cursor: pointer
+  font-style: normal
+  font-weight: bold
+  line-height: 16px
+  font-size: 14.224px
+  letter-spacing: 1.25px
+  text-transform: uppercase
+
+.caption
+  font-style: normal
+  font-weight: normal
+  line-height: 16px
+  font-size: 13.5px
+  letter-spacing: 0.4px
+  color: #757575
+
+.overline
+  font-style: normal
+  font-weight: normal
+  line-height: 16px
+  font-size: 12.192px
+  letter-spacing: 2px
+  text-transform: uppercase
+
+/*************
+ * BOOK VIEW *
+ *************/
+
+
+.article-view
+  padding: 0 18px
+  .verse-view
+    color: #514D47
+    @extend .verse-body
+  .chapter-name
+    margin: 50px auto
+
+.book-title
+  color: #BFB391
+  text-align: center
+  padding-top: 0px
+  margin: 30px 14px 14px 14px
+  margin-bottom: 70px
+  // text-transform: uppercase
+  &.readonly
+    margin-bottom: 0
+
+.chapterNoOnly
+  padding-top: 40px
+  padding-bottom: 40px
+  text-align: center
+  font-weight: bold
+  color: rgba(0,0,0,0.3)
+
+
+.fireplace
+  display: inline-block
+  padding: 0 5px
+  font-weight: bold
+  cursor: pointer
+  border-radius: 6px
+  img
+    animation: fireplace 2s infinite
+    animation-direction: alternate
+    animation-timing-function: ease-out
+
+  &:hover, &:active
+    color: white
+    transition: all 0.3s
+
+@keyframes fireplace
+  0%
+    filter: saturate(0.3) brightness(1)
+  100%
+    filter: saturate(1) brightness(1.2)
+
+.chapterNoOnly + .hideFirstLongOpen
+  .longBreak
+    display: none
+
+
+.verseNoOnly
+  font-weight: bold
+  color: rgba(0,0,0,0.3)
+  vertical-align: super
+  font-size: 50%
+  padding-right: 3px
+
+
+.book-cover
+  background-color: rgba(215, 215, 215, 1.000)
+  height: 200px
+  transition: 0.3s all
+  display: block
+  z-index: -1
+  // filter: saturate(0.5)
+  background-size: 60px
+  background-repeat: no-repeat
+  background-position: center bottom
+  &.gn
+    background-color: transparent
+    background-image: url(./assets/covers/genesis.svg)
+
+
+.break-mark
+  color: rgba(0,0,0,0.2)
+  display: inline-block
+  padding: 0 5px
+  border-radius: 6px
+  cursor: pointer
+  &:hover, &:active
+    color: white
+    transition: all 0.3s
+    background: rgba(4, 153, 255, 1.000)
+
+.breakSpace
+  transition: all 0.3s
+  display: inline-block
+  width: 0px
+  height: 0px
+  &.long
+    height: 0px
+    width: 100%
+    display: inline-block
+  &.short
+    background: #000
+    height: auto
+    display: block
+
+
+
+span.verseUnit
+  user-select: none
+  @media screen and (min-width: $break-width)
+    &:hover
+      transition: all 0.3s
+      background: rgba(121, 121, 121, 0.2)
+  border-radius: 6px
+  &.selectable
+    user-select: all
+    .verseNoOnly
+      user-select: none
+  &.selectable:hover
+    background: transparent
+
+
+  // auto select verse: amazing
+
+  &:active
+    transition: all 0.3s
+    color: rgb(13, 66, 109)
+    background: rgba(33, 149, 243, 0.2)
+    border-radius: 6px
+
+.gimeabreak
+  transition: all 0.5s
+  width: 0px
+  height: 0px
+  &.on
+    transition: all 0.5s
+    height: 20px
+    width: 100%
+    display: block
+
+
+/*************
+ * BOOK LIST *
+ *************/
+
+
+.verseJumper
+  user-select: none
+  .verseToggle
+    display: none
+  align-items: center
+  display: flex
+  max-width: 100%
+  flex-direction: row
+  flex-wrap: nowrap
+  a.smallbox
+    flex-grow: 0
+    min-width: 156px
+    white-space: nowrap
+  .verseSelector
+    flex-grow: 1
+    overflow-x: scroll
+    display: flex
+    & > a
+      color: rgba(0,0,0,0.5)
+      display: inline
+      text-align: center
+      min-height: 54px
+      min-width: 44px
+      display: flex
+      align-content: center
+      justify-content: center
+
+@media screen and (min-width: 200px)
+  .verseJumper
+    flex-wrap: wrap
+    width: 100%
+    .verseToggle
+      color: rgba(0,0,0,0.5)
+      display: inline-block
+      margin-right: 20px
+      cursor: pointer
+      flex-shrink: 1
+      border-left: 1px solid $line-color
+      padding-left: 20px
+      padding-right: 6px
+      &:hover
+        color: $blue
+
+    a.smallbox
+      flex-grow: 1
+      height: 54px
+      white-space: nowrap
+    .verseSelector.active
+      border-top: 1px solid $line-color
+      min-height: 54px
+      transition: 0.3s all
+      height: auto
+      margin-bottom: 20px
+    .verseSelector
+      transition: 0.3s all
+      padding: 0 5px 0px 20px
+      display: block
+      width: 100%
+      min-height: 0
+      height: 0
+      &>a
+        &:hover
+          background: $blue
+          color: white
+        min-height: 44px
+        margin-top: 10px
+        text-align: center
+        display: inline-flex
+        background: rgba(0,0,0,0.04)
+        border-radius: 46px
+        margin-right: 15px
+
+
+
+/**************
+ * THEME DARK *
+ **************/
+.theme-wrapper
+  transition: background 1.5s
+#dark.theme-wrapper
+  background: black
+  #page-title
+    color: rgba(255,255,255,0.3)
+    opacity: 1
+  .homelist li
+    a
+      color: white
+    &.seperator
+      background: transparent
+    background: rgba(255,255,255,0.15)
+  .subtitle1
+    color: white
+  .caption
+    color: rgba(255,255,255,0.5)
+  .back-button, .switch-mode-button, .book-cover, .book-title
+    filter: grayscale(1)
+  .verse-view, .chapterNoOnly, .verseNoOnly,.verseToggle
+    color: rgba(255,255,255,0.6)
+  .verseToggle,.verseSelector
+    border-color: rgba(0,0,0,0.5)
+  
+.homelist li .switch-to.icon
+  padding: 0
+  width: 44px
+  height: 44px
+  position: relative
+  .moon,.sun
+    transition: 0.8s all
+    position: absolute
+    top: 0px
+    left: 0px
+  &.dark
+    .sun
+      top: 0px
+      transform: scale(1)
+      opacity: 1
+    .moon
+      top: 30px
+      transform: scale(0)
+      opacity: 0
+  &.light
+    .moon
+      top: 0px
+      transform: scale(1)
+      opacity: 1
+    .sun
+      top: 30px
+      transform: scale(0)
+      opacity: 0
